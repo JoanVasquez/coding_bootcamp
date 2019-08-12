@@ -22,4 +22,18 @@ let solutionTwo = (arr, size) => {
   return chunked;
 };
 
-module.exports = solutionTwo;
+//Changed and remove items from arr...
+let solutionThree = (arr, size) => {
+  let chunked = [];
+  while (arr.length > 0) chunked.push(arr.splice(0, size));
+  return chunked;
+};
+
+let solutionFour = (arr, size) => {
+  let chunked = [];
+  for (let index = 0; index < arr.length; index += size)
+    chunked.push(arr.slice(index, index + size));
+  return chunked;
+};
+
+module.exports = solutionFour;
